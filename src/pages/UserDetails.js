@@ -46,7 +46,7 @@ const UserDetails = () => {
         onClick={() => navigate("/")}
         className="mb-6 flex items-center text-blue-500 hover:text-blue-700"
       >
-        Back to Users
+        Back to Users List
       </button>
 
       <div className="flex flex-col md:flex-row gap-8">
