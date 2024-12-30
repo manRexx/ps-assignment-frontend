@@ -6,11 +6,10 @@ const UserCard = ({ user }) => {
   return (
     <div key={user.id} className="bg-white rounded-lg shadow p-4 space-y-4">
       <div className="flex items-center space-x-4">
-        <img
-          src={user.image}
-          alt={`${user.firstName} ${user.lastName}`}
-          className="w-12 h-12 rounded-full object-cover"
-        />
+        <p className="text-sm font-medium p-4 pr-8 text-gray-900 truncate mb-max">
+          {"Id: "}
+          {user.id}
+        </p>
         <div className="flex-1 min-w-0">
           <p className="text-sm font-medium text-gray-900 truncate">
             {user.firstName} {user.lastName}

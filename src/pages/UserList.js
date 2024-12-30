@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { fetchUsers, fetchUsersByRole } from "../api/data";
-import { useNavigate } from "react-router-dom";
 import RoleFilter from "../components/RoleFilter";
 import Table from "../components/Table";
 import UserCard from "../components/UserCard";
