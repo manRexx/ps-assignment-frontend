@@ -3,6 +3,7 @@ import { fetchUsers, fetchUsersByRole } from "../api/data";
 import { useNavigate } from "react-router-dom";
 import RoleFilter from "../components/RoleFilter";
 import Table from "../components/Table";
+import UserCard from "../components/UserCard";
 
 const Home = () => {
   const [selectedRole, setSelectedRole] = useState("all");
@@ -68,7 +69,9 @@ const Home = () => {
         <Table users={users} />
       </div>
       <div className="md:hidden space-y-4">
-        <h2>Card View</h2>
+        {users.map((user) => (
+          <UserCard user={user} />
+        ))}
       </div>
     </div>
   );

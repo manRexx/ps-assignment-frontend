@@ -1,0 +1,40 @@
+import React from "react";
+
+const UserCard = ({ user }) => {
+  return (
+    <div key={user.id} className="bg-white rounded-lg shadow p-4 space-y-4">
+      <div className="flex items-center space-x-4">
+        <img
+          src={user.image}
+          alt={`${user.firstName} ${user.lastName}`}
+          className="w-12 h-12 rounded-full object-cover"
+        />
+        <div className="flex-1 min-w-0">
+          <p className="text-sm font-medium text-gray-900 truncate">
+            {user.firstName} {user.lastName}
+          </p>
+          <p className="text-sm text-gray-500 truncate">@{user.username}</p>
+        </div>
+        <span
+          className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${
+            user.role === "admin"
+              ? "bg-purple-100 text-purple-800"
+              : user.role === "moderator"
+              ? "bg-blue-100 text-blue-800"
+              : "bg-green-100 text-green-800"
+          }`}
+        >
+          {user.role}
+        </span>
+      </div>
+
+      <div className="pt-2 border-t border-gray-200">
+        <button className="w-full text-center text-blue-600 hover:text-blue-900 text-sm font-medium py-2">
+          View Details
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default UserCard;
