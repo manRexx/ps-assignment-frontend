@@ -4,7 +4,7 @@ const RoleFilter = ({ selectedRole, roles, onRoleChange }) => {
   return (
     <div className="flex justify-end mb-6">
       <div className="flex items-center space-x-4 p-4 bg-gray-100 rounded-md shadow-md">
-        <h3 className="text-md font-semibold text-gray-700">Select Role</h3>
+        <h3 className="text-md font-semibold text-gray-700">Filter By Role</h3>
         <select
           value={selectedRole}
           onChange={(e) => onRoleChange(e.target.value)}
