@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Table = ({ users }) => {
+  const navigate = useNavigate();
   return (
     <div>
       <table className="min-w-full divide-y divide-gray-200">
@@ -70,7 +72,10 @@ const Table = ({ users }) => {
                 </span>
               </td>
               <td className="p-4 whitespace-nowrap">
-                <button className="text-blue-600 hover:text-blue-900 text-sm font-medium">
+                <button
+                  onClick={() => navigate(`user/${user.id}`)}
+                  className="text-blue-600 hover:text-blue-900 text-sm font-medium"
+                >
                   View Details
                 </button>
               </td>

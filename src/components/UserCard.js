@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const UserCard = ({ user }) => {
+  const navigate = useNavigate();
   return (
     <div key={user.id} className="bg-white rounded-lg shadow p-4 space-y-4">
       <div className="flex items-center space-x-4">
@@ -29,7 +31,10 @@ const UserCard = ({ user }) => {
       </div>
 
       <div className="pt-2 border-t border-gray-200">
-        <button className="w-full text-center text-blue-600 hover:text-blue-900 text-sm font-medium py-2">
+        <button
+          onClick={() => navigate(`user/${user.id}`)}
+          className="w-full text-center text-blue-600 hover:text-blue-900 text-sm font-medium py-2"
+        >
           View Details
         </button>
       </div>

@@ -1,6 +1,7 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
+import UserDetails from "./pages/UserDetails";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <main className="container mx-auto px-4 py-8">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/user/:id" element={<UserDetails />} />
         </Routes>
       </main>
     </div>
