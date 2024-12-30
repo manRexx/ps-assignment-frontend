@@ -5,7 +5,7 @@ import RoleFilter from "../components/RoleFilter";
 import Table from "../components/Table";
 import UserCard from "../components/UserCard";
 
-const Home = () => {
+const UserList = () => {
   const [selectedRole, setSelectedRole] = useState("all");
   const [roles, setRoles] = useState([]);
   const [users, setUsers] = useState([]);
@@ -77,4 +77,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default UserList;

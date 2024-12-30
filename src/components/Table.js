@@ -9,6 +9,9 @@ const Table = ({ users }) => {
         <thead className="bg-gray-50">
           <tr>
             <th className="p-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              Id
+            </th>
+            <th className="p-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
               User
             </th>
             <th className="p-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -20,24 +23,18 @@ const Table = ({ users }) => {
             <th className="p-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
               Role
             </th>
-            <th className="p-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-              Actions
-            </th>
           </tr>
         </thead>
         <tbody className="bg-white divide-y divide-gray-200">
           {users.map((user) => (
             <tr
               key={user.id}
-              className="hover:bg-gray-50 transition-colors duration-200"
+              className="hover:bg-gray-50 transition-colors duration-200 cursor-pointer"
+              onClick={() => navigate(`user/${user.id}`)}
             >
+              <td className="p-4 text-sm whitespace-nowrap">{user.id}</td>
               <td className="p-4 whitespace-nowrap">
                 <div className="flex items-center">
-                  <img
-                    src={user.image}
-                    alt={`${user.firstName} ${user.lastName}`}
-                    className="w-10 h-10 rounded-full object-cover"
-                  />
                   <div className="ml-4">
                     <div className="text-sm font-medium text-gray-900">
                       {user.firstName} {user.lastName}
@@ -70,14 +67,6 @@ const Table = ({ users }) => {
                 >
                   {user.role}
                 </span>
-              </td>
-              <td className="p-4 whitespace-nowrap">
-                <button
-                  onClick={() => navigate(`user/${user.id}`)}
-                  className="text-blue-600 hover:text-blue-900 text-sm font-medium"
-                >
-                  View Details
-                </button>
               </td>
             </tr>
           ))}
