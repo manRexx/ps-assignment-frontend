@@ -9,7 +9,7 @@ const api = axios.create({
 export const fetchUsers = async () => {
   try {
     const response = await api.get("/users");
-    return response.data;
+    return response.data.users;
   } catch (error) {
     console.error("Fetch Users Error:", error);
     throw error;
@@ -21,7 +21,7 @@ export const fetchUsersByRole = async (role) => {
     const response = await api.get("/users/role", {
       params: { role },
     });
-    return response.data;
+    return response.data.users;
   } catch (error) {
     console.error("Fetch Users by Role Error:", error);
     throw error;
