@@ -6,6 +6,15 @@ const api = axios.create({
   baseURL: API_BASE_URL,
 });
 
+export const loadUsers = async () => {
+  try {
+    await api.post("/users/load");
+  } catch (error) {
+    console.error("Load Users Error:", error);
+    throw error;
+  }
+};
+
 export const fetchUsers = async () => {
   try {
     const response = await api.get("/users");
