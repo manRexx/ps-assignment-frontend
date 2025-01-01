@@ -12,7 +12,7 @@ const InfoSection = ({ title, children }) => {
 InfoSection.Item = ({ label, value }) => (
   <div>
     <span className="text-sm text-gray-500">{label}</span>
-    <p className="font-medium">{value}</p>
+    <p className="font-medium overflow-clip">{value}</p>
   </div>
 );
 
